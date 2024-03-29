@@ -5,7 +5,7 @@ import New from '../Components/New'
 const Homepage = () => {
   return (
     <>
-      <div className='relative  justify-center '>
+      <div className='relative justify-center '>
         <img
           className='w-full h-[1400px] object-cover z-20 '
           src={images.layup}
@@ -32,7 +32,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className='relative h-auto bg-white2 p-[100px]  mx-auto  max-w-[1440px] flex justify-center gap-[100px] items-center overflow-hidden '>
+      <div className=' container relative h-auto bg-white2 p-[100px]  mx-auto  max-w-[1440px] flex justify-center gap-[100px] items-center overflow-hidden '>
         <div className='bg-royal-blue opacity-10 w-[600px] h-[600px] absolute -top-[100px] -left-[200px]       rounded-full'>
           sadfdsf
         </div>
@@ -59,8 +59,23 @@ const Homepage = () => {
       </div>
 
       <div className='w-full bg-bg1 '>
-        <div className='max-w-[1440px] h-auto p-[100px]'>
-          <New/>
+        <div className='  max-w-[1440px] h-auto p-[100px] flex gap-[20px] flex-col mx-auto'>
+          <h3 className='font-orbitron text-royal-blue text-3xl'>
+            Recent News
+          </h3>
+          <p>NBA has announced some new informations</p>
+          <div className=' w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
+          <New />
+          <New />
+          <New />
+          <New />
+          <New />
+          <New />
+          <New />
+          <New />
+          <New />
+          </div>
+       
         </div>
       </div>
     </>
