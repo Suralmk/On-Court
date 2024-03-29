@@ -1654,6 +1654,16 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@reduxjs/toolkit@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.2.2.tgz"
+  integrity sha512-454GZrEx3G6QSYwIx9ROaso1HR6sTH8qyZBe3KEsdWVGU3ayV8jYCwdaEJV3vl9V6+pi3GRl+7Xl7AeDna6qwQ==
+  dependencies:
+    immer "^10.0.3"
+    redux "^5.0.1"
+    redux-thunk "^3.1.0"
+    reselect "^5.0.1"
+
 "@remix-run/router@1.9.0":
   version "1.9.0"
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.9.0.tgz"
@@ -5361,6 +5371,11 @@ ignore@^5.2.0, ignore@^5.2.4:
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.2.4.tgz"
   integrity sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==
 
+immer@^10.0.3:
+  version "10.0.4"
+  resolved "https://registry.npmjs.org/immer/-/immer-10.0.4.tgz"
+  integrity sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==
+
 immer@^9.0.7:
   version "9.0.21"
   resolved "https://registry.npmjs.org/immer/-/immer-9.0.21.tgz"
@@ -8259,6 +8274,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux-thunk@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz"
+  integrity sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==
+
 redux@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/redux/-/redux-5.0.1.tgz"
@@ -8368,6 +8388,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz"
   integrity sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==
+
+reselect@^5.0.1:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/reselect/-/reselect-5.1.0.tgz"
+  integrity sha512-aw7jcGLDpSgNDyWBQLv2cedml85qd95/iszJjN988zX1t7AVRJi19d9kto5+W7oCfQ94gyo40dVbT6g2k4/kXg==
 
 resolve-cwd@^3.0.0:
   version "3.0.0"
