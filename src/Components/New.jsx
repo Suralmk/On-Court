@@ -2,7 +2,7 @@ import React from 'react'
 import { images } from '../Constants'
 const New = ({ title, content, image }) => {
   return (
-    <div className='w-[400px] h-auto flex flex-col gap-3 bg-white rounded-lg'>
+    <div className='w-full  h-auto flex flex-col gap-3 bg-white rounded-lg'>
       <img src={images.image2} alt='' />
       <div className=' p-5 flex flex-col gap-[20px]'>
         <h4 className='font-sans font-bold'>
