@@ -10,7 +10,7 @@
 
 ###
 
-<img src="https://github.com/Suralmk/On-Court/blob/main/src/assets/best-basketball-collage-design.jpg">
+<img width="400" height="auto" src="https://github.com/Suralmk/On-Court/blob/main/src/assets/best-basketball-collage-design.jpg">
 
 ###
 
