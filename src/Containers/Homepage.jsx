@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react'
-import { images } from '../Constants'
+import { images, data } from '../Constants'
 import { FaQuoteLeft } from 'react-icons/fa'
 import New from '../Components/New'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-
+import Vedio from '../Components/Vedio'
 const Homepage = () => {
+
   const firstText = useRef(null)
   const secondText = useRef(null)
   const slider = useRef(null)
@@ -17,7 +18,7 @@ const Homepage = () => {
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
-        scrub: 0.2,
+        scrub: 0.25,
         start: 0,
         end: window.innerHeight,
         onUpdate: e => (direction = e.direction * -0.7)
@@ -93,39 +94,37 @@ const Homepage = () => {
 
       <div className='w-full bg-bg1 '>
         <div className='  max-w-[1440px] h-auto p-[100px] flex gap-[20px] flex-col mx-auto'>
-          <h3 className='font-orbitron text-royal-blue text-3xl'>
+          <h3 className=' capitalize font-orbitron text-royal-blue text-3xl'>
             Recent News
           </h3>
           <p>NBA has announced some new informations</p>
           <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-            <New />
-            <New />
-            <New />
-            <New />
-            <New />
-            <New />
+            {data.News.map((news, id) => (
+              <New key={id} title={news.title} image={news.image}/>
+            ))}
+            
           </div>
         </div>
       </div>
 
       {/* All time stars */}
-      <div className=' relative h-auto overflow-hidden flex justify-center gap-[100px] items-center w-full'>
+      <div className=' relative h-auto overflow-hidden flex justify-center gap-[100px] items-center '>
         <img
           className=' w-full h-[100vh] bg-black object-contain object-bottom'
           src={images.kobe}
           alt=''
         />
-        <div className='absolute bottom-5  '>
-          <div ref={slider} className='relative whitespace-nowrap flex '>
+        <div className='absolute bottom-5  w-full'>
+          <div ref={slider} className='relative whitespace-nowrap flex'>
             <p
               ref={firstText}
-              className='relative m-0 text-white font-anek text-[250px] p-[50px]'
+              className='relative m-0 text-white font-anek text-[250px]'
             >
-              Kobe Bryant Mamba -
+              Kobe Bryant Mamba - 
             </p>
             <p
               ref={secondText}
-              className='relative m-0 text-white font-anek text-[250px] p-[50px]'
+              className='absolute left-full m-0 text-white font-anek text-[250px] '
             >
               All Time Legend
             </p>
@@ -134,8 +133,19 @@ const Homepage = () => {
       </div>
 
       {/* vines Collection */}
-      <div className='relative h-auto overflow-hidden flex justify-center gap-[100px] items-center  w-full  p-[100px]'>
-        check
+      <div className='w-full bg-bg1 '>
+        <div className='max-w-[1440px] h-auto p-[100px] flex gap-[20px] flex-col mx-auto'>
+          <h3 className='font-orbitron text-royal-blue text-3xl capitalize'>
+            Best plays and Funny Vedios
+          </h3>
+          <p>NBA has announced some new informations</p>
+          <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4'>
+            {data.Vedio.map((ved, id) => (
+                <Vedio vedioId={ved.videoId} title={ved.title} />
+            ))}
+          
+          </div>
+        </div>
       </div>
     </>
   )
