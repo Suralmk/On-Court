@@ -10,6 +10,8 @@
     "autoprefixer": "^10.4.19",
     "axios": "^1.5.1",
     "framer-motion": "^11.0.23",
+    "gsap": "^3.12.5",
+    "gsap-trial": "^3.12.5",
     "jsonwebtoken": "^9.0.2",
     "postcss-cli": "^11.0.0",
     "postcss-loader": "^8.1.1",
