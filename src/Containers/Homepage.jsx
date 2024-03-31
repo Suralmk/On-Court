@@ -68,8 +68,11 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className=' container relative h-auto bg-white2 p-[100px]  mx-auto  max-w-[1440px] flex justify-center gap-[100px] items-center  overflow-y-hidden overflow-x-visible'>
-        <div className='bg-royal-blue opacity-10 w-[600px] h-[600px] absolute -top-[100px] -left-[200px]       rounded-full'></div>
+
+      <div className='h-auto w-full bg-white2 relative overflow-hidden'>
+      <div className='bg-royal-blue opacity-10 w-[600px] h-[600px] absolute -top-[100px] -left-[200px]       rounded-full'></div>
+      <div className=' container relative h-auto  p-[100px]  mx-auto  max-w-[1440px] flex justify-center gap-[100px] items-center  overflow-y-hidden overflow-x-visible'>
+
         <div className='w-1/2 flex flex-col gap-5 relative'>
           <h3 className='font-orbitron text-royal-blue text-3xl '>
             On Court, History is Made
@@ -90,6 +93,7 @@ const Homepage = () => {
           />
           <div className='w-[250px] h-[450px] bg-yellow rounded-full opacity-80 top-0'></div>
         </div>
+      </div>
       </div>
 
       <div className='w-full bg-bg1 '>

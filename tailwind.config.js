@@ -15,6 +15,7 @@ module.exports = {
         "yellow": '#e7d533',
         "secondary": '#00ff00',
         "white2" : "rgba(255, 255, 255, 0.3)",
+        "purple" : " rgba(145,13,210)",
 
         "bg1": 'rgba(0, 35, 102, 0.1)',
       },
