@@ -5,13 +5,15 @@ import New from '../Components/New'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Vedio from '../Components/Vedio'
-const Homepage = () => {
+import { Link } from 'react-router-dom'
+import { PiArrowRightLight } from 'react-icons/pi'
 
+const Homepage = () => {
   const firstText = useRef(null)
-  const secondText = useRef(null)
+
   const slider = useRef(null)
   let xPercent = 0
-  let direction = -1
+  let direction = 1
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -20,10 +22,10 @@ const Homepage = () => {
         trigger: document.documentElement,
         scrub: 0.25,
         start: 0,
-        end: window.innerHeight,
-        onUpdate: e => (direction = e.direction * -0.7)
+        end: window.innerWidth,
+        onUpdate: e => (direction = e.direction * 0.8)
       },
-      x: '-500px'
+      x: '100px'
     })
     requestAnimationFrame(animate)
   }, [])
@@ -35,7 +37,6 @@ const Homepage = () => {
       xPercent = -100
     }
     gsap.set(firstText.current, { xPercent: xPercent })
-    gsap.set(secondText.current, { xPercent: xPercent })
     requestAnimationFrame(animate)
     xPercent += 0.1 * direction
   }
@@ -68,32 +69,30 @@ const Homepage = () => {
         </div>
       </div>
 
-
       <div className='h-auto w-full bg-white2 relative overflow-hidden'>
-      <div className='bg-royal-blue opacity-10 w-[600px] h-[600px] absolute -top-[100px] -left-[200px]       rounded-full'></div>
-      <div className=' container relative h-auto  p-[100px]  mx-auto  max-w-[1440px] flex justify-center gap-[100px] items-center  overflow-y-hidden overflow-x-visible'>
-
-        <div className='w-1/2 flex flex-col gap-5 relative'>
-          <h3 className='font-orbitron text-royal-blue text-3xl '>
-            On Court, History is Made
-          </h3>
-          <p className='font-anek text-lg'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-            nesciunt vero sint unde cupiditate voluptates excepturi, illo, error
-            fugit quos, veritatis reprehenderit ad debitis deserunt cumque?
-            Fugit omnis aliquam veniam.
-          </p>
-          <p className='text-black'>On the road</p>
+        <div className='bg-royal-blue opacity-10 w-[600px] h-[600px] absolute -top-[100px] -left-[200px]       rounded-full'></div>
+        <div className=' container relative h-auto  p-[100px]  mx-auto  max-w-[1440px] flex justify-center gap-[100px] items-center  overflow-y-hidden overflow-x-visible'>
+          <div className='w-1/2 flex flex-col gap-5 relative'>
+            <h3 className='font-orbitron text-royal-blue text-3xl '>
+              On Court, History is Made
+            </h3>
+            <p className='font-anek text-lg'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
+              nesciunt vero sint unde cupiditate voluptates excepturi, illo,
+              error fugit quos, veritatis reprehenderit ad debitis deserunt
+              cumque? Fugit omnis aliquam veniam.
+            </p>
+            <p className='text-black'>On the road</p>
+          </div>
+          <div className='relative w-5/12 flex items-end justify-end'>
+            <img
+              src={images.dunk1}
+              className='w-[400px] absolute h-auto z-10'
+              alt=''
+            />
+            <div className='w-[250px] h-[450px] bg-yellow rounded-full opacity-80 top-0'></div>
+          </div>
         </div>
-        <div className='relative w-5/12 flex items-end justify-end'>
-          <img
-            src={images.dunk1}
-            className='w-[400px] absolute h-auto z-10'
-            alt=''
-          />
-          <div className='w-[250px] h-[450px] bg-yellow rounded-full opacity-80 top-0'></div>
-        </div>
-      </div>
       </div>
 
       <div className='w-full bg-bg1 '>
@@ -104,10 +103,16 @@ const Homepage = () => {
           <p>NBA has announced some new informations</p>
           <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
             {data.News.map((news, id) => (
-              <New key={id} title={news.title} image={news.image}/>
+              <New key={id} title={news.title} image={news.image} />
             ))}
-            
           </div>
+          <Link
+            to='/news'
+            className='p-2 border-royal-blue border w-[140px] rounded flex items-center gap-5'
+          >
+            {' '}
+            Read More <PiArrowRightLight />
+          </Link>
         </div>
       </div>
 
@@ -124,13 +129,7 @@ const Homepage = () => {
               ref={firstText}
               className='relative m-0 text-white font-anek text-[250px]'
             >
-              Kobe Bryant Mamba - 
-            </p>
-            <p
-              ref={secondText}
-              className='absolute left-full m-0 text-white font-anek text-[250px] '
-            >
-              All Time Legend
+              All Time Legend - Kobe Bryant Mamba
             </p>
           </div>
         </div>
@@ -145,9 +144,8 @@ const Homepage = () => {
           <p>NBA has announced some new informations</p>
           <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4'>
             {data.Vedio.map((ved, id) => (
-                <Vedio vedioId={ved.videoId} title={ved.title} />
+              <Vedio vedioId={ved.videoId} title={ved.title} />
             ))}
-          
           </div>
         </div>
       </div>

@@ -1,16 +1,19 @@
 import React from 'react'
-
-const New = ({title, image}) => {
+import { Link } from 'react-router-dom'
+const New = ({ title, image }) => {
   return (
     <div className='w-full  h-auto flex flex-col gap-3 bg-white rounded-lg'>
       <div>
-        <img src={image} alt="" />
+        <img src={image} alt='' />
       </div>
       <div className=' p-5 flex flex-col gap-[20px]'>
-        <h4 className='font-sans font-bold'>
+        <Link
+          to={`/news/${title}`}
+          className='font-sans font-bold hover:text-royal-blue'
+        >
           {' '}
-         {title}
-        </h4>
+          {title}
+        </Link>
         <p className='font-anek'>
           Breaking NBA News: Rookie sensation shatters records with jaw-dropping
           triple-double performance, leaving fans in awe!
