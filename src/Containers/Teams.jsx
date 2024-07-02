@@ -3,6 +3,9 @@ import { images, data } from '../Constants'
 import Team from '../Components/Team'
 
 const Teams = () => {
+  React.useEffect(() => {
+    document.title = 'Our Team | On Court'
+  }, [])
   return (
     <div className=' bg-white flex justify-center items-center min-h-screen flex-col'>
       <img
@@ -23,6 +26,8 @@ const Teams = () => {
           <Team key={id} team={team} />
         ))}
       </div>
+
+      <div className='w-full bg-bg1 p-[120px]'>sponsors</div>
     </div>
   )
 }

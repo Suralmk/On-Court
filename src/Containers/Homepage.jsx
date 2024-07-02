@@ -11,35 +11,39 @@ import { PiArrowRightLight } from 'react-icons/pi'
 const Homepage = () => {
   const firstText = useRef(null)
 
-  const slider = useRef(null)
-  let xPercent = 0
-  let direction = 1
-
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-        scrub: 0.25,
-        start: 0,
-        end: window.innerWidth,
-        onUpdate: e => (direction = e.direction * 0.8)
-      },
-      x: '100px'
-    })
-    requestAnimationFrame(animate)
-  }, [])
+    document.title = 'Home | On Court'
 
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0
-    } else if (xPercent > 0) {
-      xPercent = -100
+    // Kobe's Animation
+    const textElement = firstText.current
+
+    const textWidth = textElement.clientWidth
+    const duration = textWidth / 200
+
+    const tl = gsap.timeline({ repeat: -1 })
+
+    tl.set(textElement, { x: '100%' })
+
+    tl.to(textElement, {
+      x: `-${textWidth}`,
+      duration,
+      ease: 'linear'
+    })
+
+    tl.to(textElement, {
+      x: 0,
+      duration: 0,
+      ease: 'none'
+    })
+
+    tl.play()
+
+    return () => {
+      tl.kill()
     }
-    gsap.set(firstText.current, { xPercent: xPercent })
-    requestAnimationFrame(animate)
-    xPercent += 0.1 * direction
-  }
+  }, [firstText.current])
+
+  //   }
   return (
     <>
       <div className='relative justify-center '>
@@ -78,11 +82,14 @@ const Homepage = () => {
             </h3>
             <p className='font-anek text-lg'>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-              nesciunt vero sint unde cupiditate voluptates excepturi, illo,
-              error fugit quos, veritatis reprehenderit ad debitis deserunt
-              cumque? Fugit omnis aliquam veniam.
+              nesciunt vero sint unde cupiditate Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Commodi nesciunt vero sint unde
+              cupiditate voluptat cumque? Fugit omnis aliquam veniam. voluptates
+              excepturi, illo, error fugit quos, veritatis reprehenderit ad
+              debitis deserunt cumque? Fugit omnis aliquam veniam.
             </p>
-            <p className='text-black'>On the road</p>
+
+            <p className='text-black/60 font-anek'>On the road</p>
           </div>
           <div className='relative w-5/12 flex items-end justify-end'>
             <img
@@ -102,13 +109,22 @@ const Homepage = () => {
           </h3>
           <p>NBA has announced some new informations</p>
           <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-            {data.News.map((news, id) => (
-              <New key={id} title={news.title} image={news.image} />
-            ))}
+            {data.News.map((news, id) => {
+              if (id >= 9) return null
+              return (
+                <New
+                  key={id}
+                  title={news.title}
+                  image={news.image}
+                  summary={news.summary}
+                  id={news.id}
+                />
+              )
+            })}
           </div>
           <Link
             to='/news'
-            className='p-2 border-royal-blue border w-[140px] rounded flex items-center gap-5'
+            className='p-2 border-royal-blue border w-max rounded flex items-center gap-5'
           >
             {' '}
             Read More <PiArrowRightLight />
@@ -123,15 +139,13 @@ const Homepage = () => {
           src={images.kobe}
           alt=''
         />
-        <div className='absolute bottom-5  w-full'>
-          <div ref={slider} className='relative whitespace-nowrap flex'>
-            <p
-              ref={firstText}
-              className='relative m-0 text-white font-anek text-[250px]'
-            >
-              All Time Legend - Kobe Bryant Mamba
-            </p>
-          </div>
+        <div className='absolute bottom-5 '>
+          <p
+            ref={firstText}
+            className='relative m-0 text-white font-anek text-[250px]  whitespace-nowrap overflow-hidden'
+          >
+            All Time Legend - Kobe Bryant Mamba
+          </p>
         </div>
       </div>
 
@@ -144,7 +158,7 @@ const Homepage = () => {
           <p>NBA has announced some new informations</p>
           <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4'>
             {data.Vedio.map((ved, id) => (
-              <Vedio vedioId={ved.videoId} title={ved.title} />
+              <Vedio vedioId={ved.videoId} title={ved.title} key={id} />
             ))}
           </div>
         </div>

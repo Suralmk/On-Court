@@ -1,8 +1,17 @@
-import React from 'react'
-import { PiXLight, PiMagnifyingGlassLight } from 'react-icons/pi'
+import React, { useState } from 'react'
+import { PiXLight } from 'react-icons/pi'
+import { useNavigate } from 'react-router-dom'
 
 const SearchComponent = ({ setShowSearch, showSearch }) => {
-  console.log(showSearch, 'sad')
+  const [searched, setSearched] = useState('')
+
+  const navigate = useNavigate()
+
+  const handleSearch = e => {
+    e.preventDefault()
+    setShowSearch(false)
+    navigate(`/search/${searched}`)
+  }
   return (
     <div
       className={`${
@@ -21,11 +30,16 @@ const SearchComponent = ({ setShowSearch, showSearch }) => {
         />
       </div>
       <div className='flex flex-col gap-2 w-full'>
-        <input
-          type='text'
-          placeholder='Press "Return" to search'
-          className='p-5 text-[40px] rounded outline-none border-b-2 w-3/4'
-        />
+        <form action='' onSubmit={e => handleSearch(e)}>
+          <input
+            type='text'
+            placeholder='Press "Return" to search'
+            className='p-5 text-[40px] rounded outline-none border-b-2 w-3/4'
+            onChange={e => {
+              setSearched(e.target.value)
+            }}
+          />
+        </form>
       </div>
     </div>
   )

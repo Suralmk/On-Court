@@ -10,6 +10,9 @@ import Footer from './Components/Footer'
 import React, { useState } from 'react'
 import { Route, Link, Routes } from 'react-router-dom'
 import SearchComponent from './Components/SearchComponent'
+import Plays from './Containers/Plays'
+import SearchResults from './Containers/SearchResults'
+import DonationSuccess from './Containers/DonationSuccess'
 function App () {
   const [showSearch, setShowSearch] = useState(false)
   return (
@@ -36,9 +39,12 @@ function App () {
           }
         />
         <Route path='/news' element={<News />} />
-        <Route path='/news/:title' element={<NewsDetail />} />
+        <Route path='/news/:news_id' element={<NewsDetail />} />
         <Route path='/our-team' element={<Teams />} />
         <Route path='/support-us' element={<Donation />} />
+        <Route path='/plays' element={<Plays />} />
+        <Route path='/search/:searched' element={<SearchResults />} />
+        <Route path='/donation-success' element={<DonationSuccess />} />
         <Route path='/*' element={<PageNotFound />} />
         {/* <Route path="/teams/::team" element ={<TeamsDetail />} /> */}
       </Routes>

@@ -8,6 +8,7 @@ import gs_warriors from '../assets/Photo galleries and videos from The Mercury N
 import chicago_bulls from '../assets/Chicago Bulls.jpg'
 const News = [
   {
+    id: 1,
     title: 'LeBron James Returns from Injury',
     summary:
       'LeBron James makes a triumphant return after missing 10 games due to an ankle injury.',
@@ -16,6 +17,7 @@ const News = [
     image: lebron_return
   },
   {
+    id: 2,
     title: 'Stephen Curry Sets New Three-Point Record',
     summary:
       "Stephen Curry surpasses Ray Allen's three-point record, cementing his legacy as one of the greatest shooters.",
@@ -24,6 +26,7 @@ const News = [
     image: stephen_curry_record
   },
   {
+    id: 3,
     title: 'Kevin Durant Leads Brooklyn Nets to Victory',
     summary:
       "Kevin Durant's stellar performance propels the Brooklyn Nets to a crucial win.",
@@ -32,6 +35,7 @@ const News = [
     image: kevin_durant_victory
   },
   {
+    id: 4,
     title: 'Phoenix Suns Extend Winning Streak',
     summary:
       'The Phoenix Suns continue their dominant run with another impressive victory.',
@@ -41,6 +45,7 @@ const News = [
   },
 
   {
+    id: 5,
     title: 'Los Angeles Clippers Acquire All-Star Point Guard',
     summary:
       'The Los Angeles Clippers make a blockbuster trade to acquire an All-Star point guard.',
@@ -49,6 +54,7 @@ const News = [
     image: kevin_durant_victory
   },
   {
+    id: 6,
     title: 'Giannis Antetokounmpo Returns from Injury',
     summary:
       'Giannis Antetokounmpo returns to action for the Milwaukee Bucks after a brief injury absence.',
@@ -57,6 +63,7 @@ const News = [
     image: Giannis
   },
   {
+    id: 7,
     title: 'Chicago Bulls Surpass Expectations',
     summary:
       'The Chicago Bulls exceed expectations with their impressive performance this season.',
@@ -65,6 +72,7 @@ const News = [
     image: chicago_bulls
   },
   {
+    id: 8,
     title: 'Golden State Warriors Rookie Shines Bright',
     summary:
       'A rookie sensation for the Golden State Warriors continues to impress with his standout performances.',
@@ -73,6 +81,7 @@ const News = [
     image: gs_warriors
   },
   {
+    id: 9,
     title: 'NBA Announces All-Star Game Starters',
     summary:
       'The NBA unveils the starters for the highly anticipated All-Star Game.',
@@ -81,6 +90,7 @@ const News = [
     image: kevin_durant_victory
   },
   {
+    id: 10,
     title: "Brooklyn Nets' Big Three Dominate Opponents",
     summary:
       "The Brooklyn Nets' formidable trio of superstars continues to dominate opponents with their collective talent.",
@@ -133,7 +143,7 @@ const OurTeam = [
   {
     id: 1,
     picture: lebron_return,
-    name: 'Surafel Melaku',
+    name: 'Aron Peter',
     position: 'Coach Director',
     quote:
       'we are pleased for the game and the change we make is permanet and unforgetable.'
@@ -149,7 +159,7 @@ const OurTeam = [
   {
     id: 3,
     picture: stephen_curry_record,
-    name: 'Surafel Melaku',
+    name: 'Joseph Farshing',
     position: 'Coach Director',
     quote:
       'we are pleased for the game and the change we make is permanet and unforgetable.'
@@ -157,7 +167,7 @@ const OurTeam = [
   {
     id: 4,
     picture: gs_warriors,
-    name: 'Surafel Melaku',
+    name: 'Chris Brook',
     position: 'Coach Director',
     quote:
       'we are pleased for the game and the change we make is permanet and unforgetable.'

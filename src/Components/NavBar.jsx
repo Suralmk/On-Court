@@ -1,26 +1,54 @@
 import React, { useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = ({ setShowSearch, showSearch }) => {
   return (
-    <div className='w-10/12 p-5 px-8 flex justify-between rounded-lg bg-white opacity-100 items-center mx-auto   top-5 left-0 right-0 backdrop-blur-xl fixed z-20'>
+    <div className='w-10/12 p-5 px-8 flex justify-between rounded-lg bg-white opacity-100 items-center mx-auto top-5 left-0 right-0 backdrop-blur-xl absolute z-20'>
       <h2 className='font-orbitron text-3xl w-fit font-bold'>Oncourt</h2>
       <nav className=''>
         <ul className='flex items-center justify-between gap-10 font-orbitron '>
           <li>
-            <Link to='/' className='font-bold' href=''>
+            <NavLink
+              style={({ isActive }) => {
+                return isActive ? { color: '#5e27c5', fontWeight: 'bold' } : {}
+              }}
+              to='/'
+              href=''
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to='/news'>News</Link>
+            <NavLink
+              style={({ isActive }) => {
+                return isActive ? { color: '#5e27c5', fontWeight: 'bold' } : {}
+              }}
+              to='/news'
+            >
+              News
+            </NavLink>
           </li>
           <li>
-            <Link to='/our-team'>Our Team</Link>
+            <NavLink
+              style={({ isActive }) => {
+                return isActive ? { color: '#5e27c5', fontWeight: 'bold' } : {}
+              }}
+              to='/our-team'
+            >
+              Our Team
+            </NavLink>
           </li>
           <li>
-            <Link>Funny</Link>
+            <NavLink
+              to={'/plays'}
+              style={({ isActive }) => {
+                return isActive ? { color: '#5e27c5', fontWeight: 'bold' } : {}
+              }}
+            >
+              {' '}
+              Plays
+            </NavLink>
           </li>
           <li>
             <Link
@@ -32,12 +60,12 @@ const NavBar = ({ setShowSearch, showSearch }) => {
             </Link>
           </li>
           <li>
-            <Link
+            <NavLink
               to='/support-us'
               className='ext-white bg-gradient-to-br from-blue-100 to-yellow hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 text-royal-blue'
             >
               Support Us
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

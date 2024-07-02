@@ -6,8 +6,10 @@ import kobe from '../assets/Kobe Braynt Portrait (2).jpg'
 import lebron_return from '../assets/lebron_james_return.jpg'
 import stephen_curry_record from '../assets/stephen_curry_record.jpg'
 import kevin_durant_victory from '../assets/kevin_durant_victory.jpg'
+import spinner from '../assets/png/ss.svg'
 
 export default {
+  spinner,
   image6,
   image2,
   layup,
