@@ -1,5 +1,5 @@
-fastapi
-mangum
-uvicorn
-chapa
-dotenv
+fastapi==0.85.0
+uvicorn==0.18.3
+mangum==0.13.0
+chapa==0.1.2
+python-dotenv==1.0.0

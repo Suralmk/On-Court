@@ -57,7 +57,3 @@ async def payment_process(request : Request ):
 
     return {"checkout_url" : response["data"]["checkout_url"] } 
 
-
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
