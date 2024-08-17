@@ -13,8 +13,17 @@ import SearchComponent from './Components/SearchComponent'
 import Plays from './Containers/Plays'
 import SearchResults from './Containers/SearchResults'
 import DonationSuccess from './Containers/DonationSuccess'
+import ReactGA from 'react-ga'
+
+const TRACKING_ID = 'G-KB6YRJSC6G'
 function App () {
   const [showSearch, setShowSearch] = useState(false)
+
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID, { debug: false })
+    ReactGA.pageview(window.location.pathname + window.location.search)
+    console.log('ReactGA initialized and pageview sent')
+  }, [])
   return (
     <div className='w-full bg-white relative'>
       {showSearch ? (
