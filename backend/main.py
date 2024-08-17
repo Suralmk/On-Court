@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import os
 import json
 from helpers import get_transaction_number
+import uvicorn
 
 load_dotenv()
 
@@ -55,3 +56,8 @@ async def payment_process(request : Request ):
         raise HTTPException(status_code=400, detail=str(e))
 
     return {"checkout_url" : response["data"]["checkout_url"] } 
+
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("app.api:app", host="0.0.0.0", port=port, reload=True)
