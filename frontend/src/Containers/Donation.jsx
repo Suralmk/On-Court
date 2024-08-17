@@ -64,7 +64,7 @@ const Donation = () => {
       setLoading(true)
       try {
         const res = await axios
-          .post('http://127.0.0.1:8000/initialize/', data)
+          .post('https://oncourt-backend.vercel.app/initialize/', data)
           .then(res => {
             window.location.replace(res.data.checkout_url)
           })
