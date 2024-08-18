@@ -103,12 +103,12 @@ const Homepage = () => {
       </div>
 
       <div className='w-full bg-bg1 '>
-        <div className='  max-w-[1440px] h-auto px-[20px] py-[50pxs] md:p-[100px] flex gap-[20px] flex-col mx-auto'>
+        <div className='  max-w-[1440px] h-auto px-[20px] py-[50px] md:p-[100px] flex gap-[20px] flex-col mx-auto'>
           <h3 className=' capitalize font-orbitron text-royal-blue text-3xl'>
             Recent News
           </h3>
           <p>NBA has announced some new informations</p>
-          <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+          <div className=' container w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 '>
             {data.News.map((news, id) => {
               if (id >= 9) return null
               return (
