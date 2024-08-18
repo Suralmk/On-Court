@@ -7,7 +7,7 @@ const News = () => {
   }, [])
   return (
     <div className=' bg-bg1'>
-      <div className='p-[120px] flex justify-start items-start min-h-screen flex-col max-w-[1350px] m-auto'>
+      <div className='px-[20px] py-[120px] md:p-[120px] flex justify-start items-start min-h-screen flex-col max-w-[1350px] m-auto'>
         <h3 className=' capitalize font-orbitron text-royal-blue text-3xl my-[20px] font-light'>
           News
         </h3>

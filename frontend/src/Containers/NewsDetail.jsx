@@ -20,7 +20,7 @@ const NewsDetail = () => {
   }, [news_id])
 
   return (
-    <div className='p-[120px] bg-bg1 min-h-screen w-full '>
+    <div className='px-[20px] py-[120px] md:p-[120px] bg-bg1 min-h-screen w-full '>
       {!searchResults ? (
         <h3 className=' capitalize font-orbitron text-royal-blue text-3xl my-[20px] font-light'>
           News Does not found!

@@ -119,30 +119,25 @@ const Donation = () => {
   }, [])
   return (
     <>
-      {loading ? (
+      {loading && (
         <div className='w-full h-screen fixed z-20 bg-black/20 flex items-center justify-center'>
           <img src={images.spinner} alt='' width={200} />
         </div>
-      ) : (
-        <> </>
       )}
 
       <div className='pt-[140px] pb-[20px] bg-bg1 flex justify-start items-center min-h-screen flex-col'>
-        {donationError ? (
-          <p className='w-[600px] p-3 text-center bg-red-200 text-red-600 mb-3 flex justify-center items-center gap-4'>
-            {' '}
+        {donationError && (
+          <p className='w-full md:w-[600px] p-3 text-center bg-red-200 text-red-600 mb-3 flex justify-center items-center gap-4'>
             <PiWarning size={25} />
             {donationError}
           </p>
-        ) : (
-          ''
         )}
         <form
-          className='w-[600px] flex flex-col gap-5 bg-white/70 p-8 rounded-lg'
+          className=' w-full sm:w-[80%] md:w-[600px] flex flex-col gap-5 bg-white/70 p-8 rounded-lg'
           onSubmit={e => handleDonation(e)}
         >
-          <div className='flex items-center justify-between'>
-            <div className='flex flex-col gap-2'>
+          <div className='flex flex-col gap-5  md:flex-row items-center justify-between'>
+            <div className='w-full flex flex-col gap-2'>
               First Name
               <input
                 style={
@@ -156,13 +151,11 @@ const Donation = () => {
                 className='p-2  px-4 rounded outline-none border-[1px] bg-transparent '
                 onChange={e => handleChange(e)}
               />
-              {firstNameError ? (
+              {firstNameError && (
                 <p className='text-red-400 text-[13px]'>{firstNameError}</p>
-              ) : (
-                ''
               )}
             </div>
-            <div className='flex flex-col gap-2'>
+            <div className=' w-full flex flex-col gap-2'>
               Last Name
               <input
                 style={
@@ -176,11 +169,9 @@ const Donation = () => {
                 className='p-2  px-4 rounded outline-none border-[1px] bg-transparent'
                 onChange={e => handleChange(e)}
               />
-              {lastNameError ? (
+              {lastNameError && (
                 <p className='text-red-400 text-[13px]'>{lastNameError}</p>
-              ) : (
-                ''
-              )}
+              ) }
             </div>
           </div>
           <div className='flex flex-col gap-2'>
@@ -197,11 +188,9 @@ const Donation = () => {
               className='py-2  px-4 rounded outline-none border-[1px] bg-transparent '
               onChange={e => handleChange(e)}
             />
-            {emailError ? (
+            {emailError && (
               <p className='text-red-400 text-[13px]'>{emailError}</p>
-            ) : (
-              ''
-            )}
+            ) }
           </div>
           <h1 className='font-orbitron text-[30px] mb-7'>
             How much would you like to donate?
@@ -231,11 +220,9 @@ const Donation = () => {
               value={data.amount}
               onChange={e => handleChange(e)}
             />
-            {amountError ? (
+            {amountError && (
               <p className='text-red-400 text-[13px]'>{amountError}</p>
-            ) : (
-              ''
-            )}
+            ) }
           </div>
           <button className=' mt-5 ext-white bg-gradient-to-br from-blue-100 to-yellow hover:bg-gradient-to-bl font-bold rounded-lg text-sm px-5 py-3 text-center me-2 mb-2 text-royal-blue '>
             Continue

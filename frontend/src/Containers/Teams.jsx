@@ -9,25 +9,25 @@ const Teams = () => {
   return (
     <div className=' bg-white flex justify-center items-center min-h-screen flex-col'>
       <img
-        className='w-full h-screen object-cover  '
+        className='w-full h-[50vh] object-cover  '
         src={images.layup}
         alt=''
       />
 
-      <div className='px-[50px] py-[100px] w-full'>
-        <h3 className='font-orbitron text-royal-blue text-3xl mb-4 '>
-          Our Coaches and Directors
-        </h3>
-        <p className='font-anek text-lg mb-7'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-          nesciunt vero sint unde
-        </p>
+      <div className=' py-[50px]  w-full'>
+        <div className='px-[20px] md:px-[100px]'>
+          <h3 className='font-orbitron text-royal-blue text-3xl mb-4 '>
+            Our Coaches and Directors
+          </h3>
+          <p className='font-anek text-lg mb-7'>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
+            nesciunt vero sint unde
+          </p>
+        </div>
         {data.OurTeam.map((team, id) => (
           <Team key={id} team={team} />
         ))}
       </div>
-
-      <div className='w-full bg-bg1 p-[120px]'>sponsors</div>
     </div>
   )
 }

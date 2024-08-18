@@ -19,7 +19,7 @@ const SearchResults = () => {
     handleSearch()
   }, [searched])
   return (
-    <div className='p-[120px] bg-bg1 flex justify-start items-center min-h-screen flex-col'>
+    <div className='px-[20px] py-[120px] md:p-[120px]  bg-bg1 flex justify-start items-center min-h-screen flex-col'>
       <h3 className=' capitalize font-orbitron text-royal-blue text-3xl my-[20px] font-light'>
         {searchResults.length === 0 ? 'No Search Results' : 'Search Results'}
       </h3>

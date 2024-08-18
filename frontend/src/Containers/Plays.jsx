@@ -6,7 +6,7 @@ const Plays = () => {
     document.title = 'Plays | On Court'
   }, [])
   return (
-    <div className='p-[120px] bg-bg1 min-h-screen w-full '>
+    <div className='px-[20px] py-[120px] md:p-[120px]  bg-bg1 min-h-screen w-full '>
       <div className='max-w-[1350px] flex-col gap-8 flex items-start mx-auto'>
         <h3 className='capitalize font-orbitron text-royal-blue text-3xl mt-[20px] font-light'>
           Plays

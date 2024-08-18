@@ -34,9 +34,9 @@ const Footer = () => {
 
   return (
     <div className='h-auto w-full bg-white relative overflow-hidden'>
-      <div className='bg-yellow opacity-50 w-[600px] h-[600px] absolute -top-[100px] -left-[200px]       rounded-full z-[-1]'></div>
-      <div className='container max-w-[1440px] p-[100px] flex justify-between items-top gap-10 mx-auto '>
-        <div className='flex flex-col gap-8 w-1/3 mr-10'>
+      <div className='bg-yellow opacity-50 w-[600px] h-[600px] absolute -top-[100px] -left-[200px] rounded-full z-[-1]'></div>
+      <div className='container max-w-[1440px] px-[20px] py-[50px] md:p-[100px] flex flex-col md:flex-row justify-between items-top gap-10 mx-auto '>
+        <div className='flex flex-col gap-8 w-full md:w-1/3 mr-10'>
           <h1 className='text-5xl font-orbitron font-bold items-start'>
             On Court
           </h1>
@@ -74,7 +74,7 @@ const Footer = () => {
           </form>
         </div>
 
-        <div className='flex flex-col gap-3 w-1/4 items-start'>
+        <div className='flex flex-col gap-3 w-full md:w-1/4 items-start'>
           <h1 className='text-2xl font-orbitron  items-start'>News</h1>
           <p>Ethiopian Basketball Federation</p>
           <p>Announcements</p>
@@ -82,7 +82,7 @@ const Footer = () => {
           <p>Join our Team</p>
         </div>
 
-        <div className='flex flex-col gap-3 w-1/4 items-start'>
+        <div className='flex flex-col gap-3 w-full md:w-1/4 items-start'>
           <h1 className='text-2xl font-orbitron  items-start'>Plays</h1>
           <p>NBA best plays</p>
           <p>Slam Dunk</p>

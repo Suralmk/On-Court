@@ -3,7 +3,6 @@ import Homepage from './Containers/Homepage'
 import News from './Containers/News'
 import NewsDetail from './Containers/NewsDetail'
 import Teams from './Containers/Teams'
-import TeamsDetail from './Containers/TeamsDetail'
 import PageNotFound from './Containers/PageNotFound'
 import Donation from './Containers/Donation'
 import Footer from './Components/Footer'
@@ -14,7 +13,8 @@ import Plays from './Containers/Plays'
 import SearchResults from './Containers/SearchResults'
 import DonationSuccess from './Containers/DonationSuccess'
 import ReactGA from 'react-ga'
-
+import ScrollToTop from './Components/ScrollToTop'
+import { AnimatePresence } from 'framer-motion'
 const TRACKING_ID = 'G-KB6YRJSC6G'
 function App () {
   const [showSearch, setShowSearch] = useState(false)
@@ -26,14 +26,10 @@ function App () {
   }, [])
   return (
     <div className='w-full bg-white relative'>
-      {showSearch ? (
-        <SearchComponent
-          showSearch={showSearch}
-          setShowSearch={setShowSearch}
-        />
-      ) : (
-        <></>
-      )}
+      <ScrollToTop />
+
+      <SearchComponent showSearch={showSearch} setShowSearch={setShowSearch} />
+
       <NavBar
         className=''
         showSearch={showSearch}
