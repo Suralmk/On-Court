@@ -6,6 +6,7 @@ import Giannis from '../assets/Giannis Ugo Antetokounmpo on Instagram_ _Blessedâ
 import big_3 from '../assets/Phoenix Sunsâ€™ Big 3.jpg'
 import gs_warriors from '../assets/Photo galleries and videos from The Mercury News.jpg'
 import chicago_bulls from '../assets/Chicago Bulls.jpg'
+import images from './images'
 const News = [
   {
     id: 1,
@@ -125,52 +126,40 @@ const Vedio = [
     videoId: 'i_ocy1r4Q3c?si=1kke7KGWwZ96B2X3',
     title: "NBA's Top Plays of Week 20 | 2023-24 Season"
   }
-  //   {
-  //     "videoId": "VIDEO_ID_HERE",
-  //     "title": "Title of the Best Ankle Breaks Video 1"
-  //   },
-  //   {
-  //     "videoId": "VIDEO_ID_HERE",
-  //     "title": "Title of the Best Ankle Breaks Video 2"
-  //   },
-  //   {
-  //     "videoId": "VIDEO_ID_HERE",
-  //     "title": "Title of the Best Ankle Breaks Video 3"
-  //   }
 ]
 
 const OurTeam = [
   {
     id: 1,
-    picture: lebron_return,
+    picture: images.coach_1,
     name: 'Aron Peter',
     position: 'Coach Director',
     quote:
-      'we are pleased for the game and the change we make is permanet and unforgetable.'
+      'Defense wins games. Our commitment to shutting down the opposition is what sets us apart. We defend with intensity, intelligence, and a never-give-up attitude.'
   },
   {
     id: 2,
-    picture: chicago_bulls,
-    name: 'Surafel Melaku',
-    position: 'Coach Director',
+    picture: images.coach_2,
+    name: 'John Doe',
+    position: 'Head Coach',
     quote:
-      'we are pleased for the game and the change we make is permanet and unforgetable.'
+      'This team is built on trust, resilience, and the relentless pursuit of greatness. Every player knows their role, and together, we make each other better every day.'
   },
   {
     id: 3,
-    picture: stephen_curry_record,
+    picture: images.coach_3,
     name: 'Joseph Farshing',
-    position: 'Coach Director',
+    position: 'Defensive Coach',
     quote:
-      'we are pleased for the game and the change we make is permanet and unforgetable.'
+      'Defense wins games. Our commitment to shutting down the opposition is what sets us apart. We defend with intensity, intelligence, and a never-give-up attitude.'
   },
   {
     id: 4,
-    picture: gs_warriors,
+    picture: images.coach_4,
     name: 'Chris Brook',
-    position: 'Coach Director',
+    position: 'Assistant Coach',
     quote:
-      'we are pleased for the game and the change we make is permanet and unforgetable.'
+      "Our strength lies in our unity. We practice hard, we play hard, and we stand by each other no matter what. This team is more than just players on a court; we're a family."
   }
 ]
 export default {

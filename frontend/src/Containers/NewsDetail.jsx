@@ -10,7 +10,6 @@ const NewsDetail = () => {
   const handleSearch = () => {
     let results = data.News.filter(data => `${data.id}` === news_id)
     setSearchResults(results[0])
-    console.log(results)
   }
 
   useEffect(() => {
