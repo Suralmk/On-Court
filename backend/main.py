@@ -5,12 +5,14 @@ from dotenv import load_dotenv
 import os
 import json
 from helpers import get_transaction_number
-import uvicorn
 
 load_dotenv()
 
 app = FastAPI()
 #npm install -g vercel
+
+
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -57,6 +59,3 @@ async def payment_process(request : Request ):
 
     return {"checkout_url" : response["data"]["checkout_url"] } 
 
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
