@@ -12,17 +12,15 @@ import SearchComponent from './Components/SearchComponent'
 import Plays from './Containers/Plays'
 import SearchResults from './Containers/SearchResults'
 import DonationSuccess from './Containers/DonationSuccess'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import ScrollToTop from './Components/ScrollToTop'
-import { AnimatePresence } from 'framer-motion'
 const TRACKING_ID = 'G-KB6YRJSC6G'
 function App () {
   const [showSearch, setShowSearch] = useState(false)
 
   useEffect(() => {
-    ReactGA.initialize(TRACKING_ID, { debug: false })
-    ReactGA.pageview(window.location.pathname + window.location.search)
-    console.log('ReactGA initialized and pageview sent')
+    ReactGA.initialize(TRACKING_ID)
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname })
   }, [])
   return (
     <div className='w-full bg-white relative'>
